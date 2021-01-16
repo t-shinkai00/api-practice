@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 function Fetch({ input, complete }) {
+  const url = "https://api.github.com/users/" + input;
   const getAPI = async () => {
-    const url = "https://api.github.com/users/" + input;
     const json = await fetch(url)
       .then((res) => {
         return res.json();
@@ -26,6 +26,12 @@ function Fetch({ input, complete }) {
     <div>
       <h1>GitHub Information</h1>
       <li>Name: {input}</li>
+      <p>
+        If you want more ...{" "}
+        <a className="App-link" href={url}>
+          visit here
+        </a>
+      </p>
     </div>
   );
 }
