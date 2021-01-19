@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Fetch from "./Fetch";
 
@@ -11,8 +11,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Enter Your GitHub name.</h1>
+        <h1>Enter GitHub username</h1>
         <input
+          placeholder="Enter here"
           onChange={(e) => {
             // console.log(e.target.value);
             setInput(e.target.value);
@@ -21,6 +22,12 @@ function App() {
         />
         <p>You entered: {input}</p>
         <button onClick={() => setInputComplete(true)}>OK</button>
+        {!inputComplete ? (
+          <p style={{ color: "yellow" }}>
+            Warning: If you access too much, you will get an error.
+            <br /> If that happens, wait for a day and try again.
+          </p>
+        ) : null}
         <Fetch input={input} complete={inputComplete}></Fetch>
       </header>
     </div>
