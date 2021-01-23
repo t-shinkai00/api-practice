@@ -65,7 +65,12 @@ function Fetch({ input, complete }) {
         <li>Followers: {result.followers}</li>
         <li>Following: {result.following}</li>
         <li>
-          <a className="App-link" href={result.avatar_url}>
+          <a
+            className="App-link"
+            href={result.avatar_url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             avatar image
           </a>
         </li>
@@ -73,7 +78,12 @@ function Fetch({ input, complete }) {
         <li>Updated at: {result.updated}</li>
         <p>
           If you want more ...{" "}
-          <a className="App-link" href={url}>
+          <a
+            className="App-link"
+            href={url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             visit here
           </a>
         </p>
