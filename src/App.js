@@ -5,9 +5,7 @@ import Fetch from "./Fetch";
 function App() {
   const [input, setInput] = useState([]);
   const [inputComplete, setInputComplete] = useState(false);
-  // useEffect(() => {
-  //   console.log(input);
-  // }, [input]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +13,6 @@ function App() {
         <input
           placeholder="Enter here"
           onChange={(e) => {
-            // console.log(e.target.value);
             setInput(e.target.value);
             setInputComplete(false);
           }}

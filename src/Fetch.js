@@ -29,7 +29,6 @@ function Fetch({ input, complete }) {
       });
     console.log(json);
     setResult({
-      ...result,
       name: json.name,
       followers: json.followers,
       following: json.following,
@@ -46,7 +45,6 @@ function Fetch({ input, complete }) {
       getAPI();
     } else {
       setResult({
-        // ...result,
         name: "",
         followers: "",
         following: "",
