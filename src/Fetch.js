@@ -11,9 +11,11 @@ function Fetch({ input, complete }) {
     avatar_url: "",
   });
   const [success, setSuccess] = useState(false);
+  const [proceed, setProceed] = useState(false);
 
   const url = "https://api.github.com/users/" + input;
   const getAPI = async () => {
+    setProceed(true);
     const json = await fetch(url)
       .then((res) => {
         if (res.status === 200) setSuccess(true);
@@ -32,6 +34,7 @@ function Fetch({ input, complete }) {
       updated: json.updated_at,
       avatar_url: json.avatar_url,
     });
+    setProceed(false);
     // console.log(result);
   };
 
@@ -53,7 +56,7 @@ function Fetch({ input, complete }) {
     console.log(success);
   }, [complete]);
 
-  if (complete && success)
+  if (complete && success && !proceed)
     return (
       <div>
         <h1>GitHub Information</h1>
@@ -75,13 +78,14 @@ function Fetch({ input, complete }) {
         </p>
       </div>
     );
-  else if (complete && !success)
+  else if (complete && !success && !proceed)
     return (
       <p style={{ color: "red" }}>
         Something went wrong. Please double check username or wait for a day and
         try again.
       </p>
     );
+  else if (proceed) return <p style={{ color: "green" }}>Loading...</p>;
   else return <div></div>;
 }
 
