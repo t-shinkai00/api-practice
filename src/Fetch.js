@@ -61,9 +61,8 @@ function Fetch({ input, complete }) {
         <li>Followers: {result.followers}</li>
         <li>Following: {result.following}</li>
         <li>
-          Your{" "}
           <a className="App-link" href={result.avatar_url}>
-            avatar
+            avatar image
           </a>
         </li>
         <li>Created at: {result.created}</li>
