@@ -3,7 +3,7 @@ import "./App.css";
 
 function Fetch({ input, complete }) {
   const [result, setResult] = useState({
-    login: "",
+    name: "",
     followers: "",
     following: "",
     created: "",
@@ -18,16 +18,19 @@ function Fetch({ input, complete }) {
     setProceed(true);
     const json = await fetch(url)
       .then((res) => {
-        if (res.status === 200) setSuccess(true);
-        return res.json();
+        if (res.status === 200) {
+          setSuccess(true);
+          return res.json();
+        }
       })
       .catch((e) => {
         console.error("エラーが発生しました。", e);
         return null;
       });
+    console.log(json);
     setResult({
       ...result,
-      login: json.login,
+      name: json.name,
       followers: json.followers,
       following: json.following,
       created: json.created_at,
@@ -44,7 +47,7 @@ function Fetch({ input, complete }) {
     } else {
       setResult({
         // ...result,
-        login: "",
+        name: "",
         followers: "",
         following: "",
         created: "",
@@ -60,7 +63,7 @@ function Fetch({ input, complete }) {
     return (
       <div>
         <h1>GitHub Information</h1>
-        <li>Name: {result.login}</li>
+        <li>Name: {result.name}</li>
         <li>Followers: {result.followers}</li>
         <li>Following: {result.following}</li>
         <li>
