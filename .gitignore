@@ -27,3 +27,6 @@ yarn-error.log*
 
 # key
 secret.py
+
+# pandas
+pandas/
