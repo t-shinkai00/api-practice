@@ -30,3 +30,6 @@ secret.py
 
 # pandas
 pandas/
+
+# cache
+__pycache__/
