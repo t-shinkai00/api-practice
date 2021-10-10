@@ -9,6 +9,6 @@ params={
   "largeClassCode":"japan",
   "middleClassCode":"okinawa",
   "smallClassCode":"nahashi",
-  "applicationid":APPLICATIONID,
+  "applicationId":APPLICATIONID,
 }
 # print(params)
