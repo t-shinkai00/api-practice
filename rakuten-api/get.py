@@ -12,3 +12,9 @@ params={
   "applicationId":APPLICATIONID,
 }
 # print(params)
+
+res=requests.get(url=ENDPOINT, params=params)
+# print(res)
+
+resuluts=res.json()
+# print(resuluts)
