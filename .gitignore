@@ -26,7 +26,7 @@ yarn-error.log*
 .firebase
 
 # key
-secret.py
+secrets.py
 
 # pandas
 pandas/
