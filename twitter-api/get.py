@@ -13,4 +13,8 @@ params={
 }
 
 res=twitter.get(url=ENDPOINT,params=params)
-print(res)
+# print(res)
+
+timelines=json.loads(res.text)
+for timeline in timelines:
+  print(timeline)
