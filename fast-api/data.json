@@ -1,28 +1,26 @@
 {
-  "data": {
-    "shop_info": {
-      "name": "ABC store",
-      "location": "Tokyo"
+  "shop_info": {
+    "name": "ABC store",
+    "location": "Tokyo"
+  },
+  "items": [
+    {
+      "name": "T-Shirt",
+      "description": "white color",
+      "price": 5000,
+      "tax": 1.1
     },
-    "items": [
-      {
-        "name": "T-Shirt",
-        "description": "white color",
-        "price": 5000,
-        "tax": 1.1
-      },
-      {
-        "name": "T-Shirt",
-        "description": "black color",
-        "price": 5000,
-        "tax": 1.1
-      },
-      {
-        "name": "Y-Shirt",
-        "description": "sold out",
-        "price": 3980,
-        "tax": 1.5
-      }
-    ]
-  }
+    {
+      "name": "T-Shirt",
+      "description": "black color",
+      "price": 5000,
+      "tax": 1.1
+    },
+    {
+      "name": "Y-Shirt",
+      "description": "sold out",
+      "price": 3980,
+      "tax": 1.5
+    }
+  ]
 }
