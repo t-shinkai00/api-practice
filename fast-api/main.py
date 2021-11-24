@@ -5,6 +5,6 @@ app=FastAPI()  # instance of FastAPI
 async def index():  # asynchronous processing
   return {"message": "Hello World!!!"}
 
-@app.get("/countries/{country_name}")  # get from root by HTTP method
-async def country(country_name):  # asynchronous processing
+@app.get("/countries/{country_name}")
+async def country(country_name):
   return {"country_name": country_name}
