@@ -6,5 +6,5 @@ async def index():  # asynchronous processing
   return {"message": "Hello World!!!"}
 
 @app.get("/countries/{country_name}")  # country_name: path parameter
-async def country(country_name: str, country_num: int):  # country_num: query parameter
-  return {"country_name": country_name, "country_number": country_num}
+async def country(country_name: str, city_name: str="tokyo"):  # city_name: query parameter
+  return {"country_name": country_name, "city_name": city_name}
