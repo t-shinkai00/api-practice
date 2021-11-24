@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import FastAPI
 app=FastAPI()  # instance of FastAPI
 
@@ -6,5 +7,5 @@ async def index():  # asynchronous processing
   return {"message": "Hello World!!!"}
 
 @app.get("/countries/{country_name}")  # country_name: path parameter
-async def country(country_name: str, city_name: str="tokyo"):  # city_name: query parameter
-  return {"country_name": country_name, "city_name": city_name}
+async def country(country_name: str, country_number: Optional[int]=None):  # country_number: optional query parameter
+  return {"country_name": country_name, "country_number": country_number}
