@@ -18,7 +18,7 @@ class Item(BaseModel):
   price: int
   tax: Optional[float] = None
 
-@app.post("/item/")  # post method
+@app.post("/item")  # post method
 async def create_item(item: Item):
   # return {"message": f"{item.name}は、税込み価格{item.price*item.tax}円です。"}
   return item
